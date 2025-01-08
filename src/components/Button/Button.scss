@@ -3,6 +3,8 @@
   border:none;
   outline: none;
   border-radius: 5px ;
+  padding: 16px 30px;
+  
 
 
   &--lg{
@@ -12,19 +14,21 @@
   &--warning{
     color: #FBBF24;
     background-color: #FFFBEB;
-    border-color: #FBBF24;
+    border: 2px solid #FBBF24;
   }
 
   &--danger{
     color: #F87171;
     background-color: #FEF2F2;
-    border-color: #F87171;
+    border: 2px solid #f87171;
+
   }
 
   &--success{
     color: #047857;
     background-color: #ECFDF5;
-    border-color: #047857;
+    border: 2px solid #047857;
+
   }
 
   &--circle{

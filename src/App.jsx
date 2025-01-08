@@ -6,31 +6,56 @@ import Toggle from './components/Headless/Toggle/index'
 
 // Components 
 
-import Button from './Components/Button/Button'
+import Button from './components/Button/Button'
 import Menu from './components/DropDownMenu/Menu/Menu'
 import MenuDropDown from './components/DropDownMenu/DropDown/MenuDropDown'
 import MenuItems from './components/DropDownMenu/MenuItem/MenuItems'
 import IconToggle from './components/IconToggle/IconToggle'
 
 
-import { AiOutlineLike,AiFillLike } from "react-icons/ai";
+import { AiOutlineLike, AiFillLike } from "react-icons/ai";
+import Avatar from './components/Avatar/Avatar'
+import Badge from './components/DropDownMenu/Badge/Badge'
+
+
+
+
+
+export function FollowMouse({ render }) {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  function handleMouseMove(event) {
+    setPosition({ x: event.clientX, y: event.clientY });
+  }
+
+  return (
+    <div
+      style={{
+        height: "100vh",
+        position: "relative",
+        backgroundColor: "#fe3",
+        overflow: "hidden",
+      }}
+      onMouseMove={handleMouseMove}
+    >
+      {render(position)}
+    </div>
+  );
+}
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
   const movieCategories = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi"];
-
-  // const [open, setOpen] = useState(false)
-  // const [open2, setOpen2] = useState(false)
-
-  function handleOpen() {
-    setOpen(prev => !prev)
-  }
   return (
     <>
-      <Button className='m-le' variation={'warning'} style={{ padding: "8px  12px", margin: "12px" }} onClick={() => console.log("how are you")} onMouseEnter={() => console.log("fuck")}>
+      <Button size='lg' variation={'warning'}  onClick={() => console.log("how are you")} onMouseEnter={() => console.log("fuck")}>
         click
       </Button>
-      <Button variation={"success"} size={'lg'}>
+      <Button variation={"success"} >
+        click
+      </Button>
+      <Button variation={"danger"} >
         click
       </Button>
 
@@ -56,25 +81,32 @@ function App() {
 
       <Toggle>
 
-      <Menu style={{ border: "1px solid black" }}>
-        <Toggle.Button>
-        <Button>movies</Button>
-        </Toggle.Button>
-        <Toggle.On>
-        <MenuDropDown>
-          {movieCategories.map(item => <MenuItems>{item}</MenuItems>)}
-
-        </MenuDropDown>
-        </Toggle.On>
-      </Menu>
+        <Menu>
+          <Toggle.Button variation='warning'>
+            movies
+          </Toggle.Button>
+          <Toggle.On>
+            <MenuDropDown>
+              {movieCategories.map(item => <MenuItems>{item}</MenuItems>)}
+            </MenuDropDown>
+          </Toggle.On>
+        </Menu>
 
       </Toggle>
-      
-      <IconToggle on={<AiFillLike/>} off={<AiOutlineLike/>} />
-  </>
 
+      <IconToggle on={<AiFillLike />} off={<AiOutlineLike />} />
 
-)
+      {/* <Avatar/>
+      <Avatar>
+        Ubey Saab
+      </Avatar>
+
+      <Avatar src={"https://images.pexels.com/photos/19727180/pexels-photo-19727180/free-photo-of-a-house-in-the-snow-with-trees-and-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} /> */}
+
+      <Badge/>
+    </>
+
+  )
 
 }
 

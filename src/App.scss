@@ -11,14 +11,14 @@
 
 //3. colors : to generate classes like for backgrounds or text colors they're gonna use variables and maybe functions 
 
-// 4. Components : (button, card ,navbar,etc..)
-
-
-
 //5. Utilities : (margin,padding,border,opacity) classes
 
 @use './sassEssentials/utilities';
 
+
+
+
+// 4. Components : (button, card ,navbar,etc..)
 
 @use './components/Button/Button.scss'
 

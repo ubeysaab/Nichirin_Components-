@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { ToggleContext } from './Toggle'
-
+import Button from '../../Button/Button'
 function ToggleButton({children}) {
   let {handleToggle} = useContext(ToggleContext)
   return (
-   <div onClick={handleToggle}>
+   <Button onClick={handleToggle}>
     {children}
-   </div>
+   </Button>
   )
 }
 
