@@ -14,8 +14,10 @@ import IconToggle from './components/IconToggle/IconToggle'
 
 
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
+import { AiTwotoneCreditCard } from 'react-icons/ai'
 import Avatar from './components/Avatar/Avatar'
 import Badge from './components/DropDownMenu/Badge/Badge'
+import { FaCreditCard } from 'react-icons/fa'
 
 
 
@@ -103,7 +105,11 @@ function App() {
 
       <Avatar src={"https://images.pexels.com/photos/19727180/pexels-photo-19727180/free-photo-of-a-house-in-the-snow-with-trees-and-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} /> */}
 
-      <Badge/>
+      <Badge colorProp={'red'}  pillProp/>
+      <Badge colorProp={'red'}  pillProp>
+        <FaCreditCard style={{marginRight:"5px"}}/>
+        Entegration
+      </Badge >
     </>
 
   )
